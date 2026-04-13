@@ -1,30 +1,79 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div :data-bs-theme="themeStore.isDarkMode ? 'dark' : 'light'">
+    <div class="container-md">
+      <div class="row main-outline">
+        <div class="col-md-12 col-12">
+          <div class="p-4">
+            <div class="stylish-border-bottom">
+              <div class="row main-outline">
+                <div
+                  class="fs190 italic main-outline d-flex justify-content-between align-items-center"
+                >
+                  <router-link class="secondary-color mb-0" title="home" to="/">
+                    Wiki break </router-link
+                  ><button class="menu-button">
+                    <router-link :to="{ name: 'home' }"
+                      ><i class="secondary-color bi bi-house"></i
+                    ></router-link>
+                  </button>
+                  <ThemeToggleButton />
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <router-view />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+<script lang="ts">
+import { defineComponent, onMounted, watch, computed } from "vue";
+import { useThemeStore } from "./stores/theme";
+import ThemeToggleButton from "@/components/ThemeToggleButton.vue";
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+export default defineComponent({
+  name: "App",
+  components: {
+    ThemeToggleButton,
+  },
+  setup() {
+    const themeStore = useThemeStore();
 
-nav {
-  padding: 30px;
-}
+    // Function to apply the theme class to the body
+    const applyThemeToBody = () => {
+      if (themeStore.isDarkMode) {
+        document.body.classList.add("dark-theme");
+        document.body.classList.remove("light-theme");
+      } else {
+        document.body.classList.add("light-theme");
+        document.body.classList.remove("dark-theme");
+      }
+    };
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    onMounted(() => {
+      themeStore.initializeTheme();
+      applyThemeToBody();
+    });
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+    const themeClass = computed(() => ({
+      "dark-theme": themeStore.isDarkMode,
+      "light-theme": !themeStore.isDarkMode,
+    }));
+
+    // Watch for changes in the theme and apply the appropriate class to the body
+    watch(
+      () => themeStore.isDarkMode,
+      (newVal) => {
+        applyThemeToBody();
+      }
+    );
+    return {
+      themeStore,
+      themeClass,
+    };
+  },
+});
+</script>

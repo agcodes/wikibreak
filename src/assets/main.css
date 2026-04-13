@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Outfit:wght@100..900&display=swap");
+
+body {
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
+  color: hsl(200, 8%, 6%);
+  font-size: 105%;
+}
+
+body {
+  background-color: hsl(0, 0%, 99.2%); /* Couleur de fond principale */
+  background-image: radial-gradient(hsl(0, 24%, 95%) 1px, transparent 1px);
+  background-size: 50px 50px, cover; /* Taille de la grille (espacement des points) */
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.svg-extra {
+  width: 100%;
+}
+
+.header {
+  background: linear-gradient(
+    135deg,
+    hsl(250, 88%, 87%) 0%,
+    hsl(218, 68%, 83%) 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient-move 6s 1 linear;
+  vertical-align: middle;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 30%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 30%;
+  }
+}
+
+.header a {
+  color: hsla(0, 0%, 99.2%, 98%);
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header a:focus,
+.header a:hover {
+  background-color: hsla(0, 0%, 99.2%, 97%);
+  opacity: 0.8;
+  display: block;
+  color: hsl(200, 25%, 5%);
+}
+
+.vh100 {
+  height: 100vh;
+}
+.vh10 {
+  height: 10vh;
+}
+.vh90 {
+  height: 90vh;
+}
+
+h1 {
+  color: hsl(237, 88%, 35%);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.secondary-color {
+  color: hsl(237, 88%, 35%);
+}
+
+.main-border {
+  border: 1px solid hsl(202, 100%, 68%);
+}
+
+.fs130 {
+  font-size: 130%;
+}
+
+.fs140 {
+  font-size: 140%;
+}
+
+.fs160 {
+  font-size: 160%;
+}
+
+.fs170 {
+  font-size: 170%;
+}
+.fs180 {
+  font-size: 180%;
+}
+
+.fs190 {
+  font-size: 190%;
+}
+.fs200 {
+  font-size: 200%;
+}
+
+.fs120 {
+  font-size: 120%;
+}
+
+.card {
+  border-radius: 0;
+  opacity: 0.99;
+}
+
+.card-header {
+  background-color: transparent;
+}
+
+.stylish-border-bottom {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.stylish-border-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    135deg,
+    hsl(250, 88%, 75%) 0%,
+    hsl(218, 68%, 70%) 100%
+  );
+}
+
+.img-frame {
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+@media screen and (min-width: 1350px) {
+  .bg-photo {
+    /*background-image: url("/src/assets/photo.png");*/
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    filter: hue-rotate(9deg) saturate(100%);
+    opacity: 1;
+
+    animation: fadeSaturate 5s infinite ease-in-out;
+  }
+}
+
+/* Animation combinée : fondu et saturation */
+@keyframes fadeSaturate {
+  0% {
+    opacity: 1;
+    filter: hue-rotate(9deg) saturate(100%);
+  }
+  50% {
+    opacity: 0.95;
+    filter: hue-rotate(10deg) saturate(105%);
+  }
+  100% {
+    opacity: 1;
+    filter: hue-rotate(9deg) saturate(100%);
+  }
+}
+
+.expressive-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.expressive-menu-item {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.expressive-menu-item a {
+  display: block;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    hsl(238, 84%, 95%) 0%,
+    hsl(238, 84%, 99%) 100%
+  );
+  color: hsl(238, 5%, 3%);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.expressive-menu-item a:focus,
+.expressive-menu-item a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    hsl(237, 88%, 85%) 0%,
+    hsl(238, 68%, 82%) 100%
+  );
+}
+
+.word {
+  background: hsl(250, 16%, 93%);
+  border-radius: 17px;
+  padding: 7px 18px 7px 18px;
+  color: hsl(250, 9%, 31%);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn-expressive {
+  border-radius: 0;
+  font-weight: 600;
+  color: hsl(250, 9%, 31%);
+  padding: 0.7rem;
+}
+
+.btn-expressive:focus,
+.btn-expressive:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    hsl(250, 88%, 87%) 0%,
+    hsl(218, 68%, 83%) 100%
+  );
+}
+
+.progress-bar {
+  background: linear-gradient(
+    135deg,
+    hsl(250, 88%, 87%) 0%,
+    hsl(218, 68%, 83%) 100%
+  );
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 7px;
+  align-items: right;
+  justify-content: right;
+}
+
+.menu-button i {
+  font-size: 1.5rem;
+}
+
+body.dark-theme {
+  background-color: hsl(350, 2%, 5%);
+  background-image: radial-gradient(hsl(0, 0%, 10%) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: white;
+}
+
+body.dark-theme .secondary-color {
+  color: hsl(237, 88%, 85%);
+}
+
+body.dark-theme .expressive-menu-item a {
+  display: block;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    hsl(238, 40%, 20%) 0%,
+    hsl(238, 40%, 30%) 100%
+  );
+  color: hsl(0, 0%, 90%);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+body.dark-theme .expressive-menu-item a:focus,
+body.dark-theme .expressive-menu-item a:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(
+    135deg,
+    hsl(237, 40%, 35%) 0%,
+    hsl(238, 40%, 40%) 100%
+  );
+}
+
+body.dark-theme .btn-expressive {
+  color: hsl(0, 0%, 85%);
+
+  background: linear-gradient(
+    135deg,
+    hsl(250, 30%, 20%) 0%,
+    hsl(250, 30%, 25%) 100%
+  ); /* Fond plus sombre */
+}
+
+body.dark-theme .btn-expressive:focus,
+body.dark-theme .btn-expressive:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre légèrement plus visible */
+  background: linear-gradient(
+    135deg,
+    hsl(250, 30%, 30%) 0%,
+    hsl(218, 40%, 35%) 100%
+  ); /* Fond légèrement plus clair au survol */
+}
+
+body.dark-theme .card {
+  border-radius: 3px;
+  background-color: transparent;
+  border-color: hsl(350, 2%, 40%);
+  color: hsl(350, 2%, 99%);
+}
+
+body.dark-theme .word {
+  background: linear-gradient(
+    135deg,
+    hsl(250, 40%, 25%) 0%,
+    hsl(250, 40%, 29%) 0%
+  );
+  color: hsl(251, 41%, 92%);
+}

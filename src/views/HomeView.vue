@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <h2>Deviner l'article</h2>
+    <ul class="list-group expressive-menu">
+      <li class="expressive-menu-item mb-4">
+        <router-link :to="{ name: 'GuessWiki', params: { mode: 'anagram' } }"
+          >Anagramme</router-link
+        >
+      </li>
+      <li class="expressive-menu-item mb-4">
+        <router-link :to="{ name: 'GuessWiki', params: { mode: 'anagram-2' } }"
+          >Anagramme (difficile)</router-link
+        >
+      </li>
+      <li class="expressive-menu-item mb-4">
+        <router-link :to="{ name: 'GuessWiki', params: { mode: 'words' } }"
+          >Mots</router-link
+        >
+      </li>
+    </ul>
   </div>
 </template>
-
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class HomeView extends Vue {}
-</script>
